@@ -27,7 +27,7 @@ Visual Studeo Code, xCode, Git, Chrom DevTools.
 После провел тестирование требований и декомпозицию, произвел ручное тестирование 
 и записал все отчеты и баги при их обнаружении. Сделал регрессионное тестирование и старый функционал. <p>
 
-> <a href=" https://bug-report-toni.atlassian.net/wiki/spaces/1/pages/1015809/1-+2-">Ссылка на проект</a>
+> <a href="https://bug-report-toni.atlassian.net/wiki/spaces/1/pages/1015809/1-+2-">Ссылка на проект</a>
 
 <p>
 логин: Melkiy206.6@yandex.ru
@@ -58,7 +58,7 @@ Visual Studeo Code, xCode, Git, Chrom DevTools.
 
 Postman коллекция > <a href="https://disk.yandex.ru/d/MLTWM02FO_FVZA">Ссылка на проект</a>
 
-> <a href=" https://bug-report-toni.atlassian.net/wiki/spaces/1/pages/1015809/1-+2-">Ссылка на проект</a>
+> <a href="https://bug-report-toni.atlassian.net/wiki/spaces/1/pages/1015809/1-+2-">Ссылка на проект</a>
 
 <p>
 логин: Melkiy206.6@yandex.ru
