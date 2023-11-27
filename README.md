@@ -74,7 +74,7 @@ Postman коллекция > <Курсовая работа 2.postman_collection
 
 <p> Контактная информация:</p>
 <p>Email
-<a href="">Melkiy206.6@yandex.ru</a> </p>
+<a href="Melkiy206.6@yandex.ru">Melkiy206.6@yandex.ru</a> </p>
 <p>Telegram
-<a href="">@Anton_Isaev88</a> </p>
+<a href="@Anton_Isaev88">@Anton_Isaev88</a> </p>
 
