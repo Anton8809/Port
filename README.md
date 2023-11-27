@@ -56,7 +56,7 @@ Visual Studeo Code, xCode, Git, Chrom DevTools.
 
 Провел API тестирование и создал Postman коллекцию <p>
 
-Postman коллекция > <a href="https://disk.yandex.ru/d/MLTWM02FO_FVZA">Ссылка на проект</a>
+Postman коллекция > <Курсовая работа 2.postman_collection.json> </a>
 
 > <a href="https://bug-report-toni.atlassian.net/wiki/spaces/1/pages/1015809/1-+2-">Ссылка на проект</a>
 <p> Логин: Melkiy206.6@yandex.ru
@@ -72,7 +72,7 @@ Postman коллекция > <a href="https://disk.yandex.ru/d/MLTWM02FO_FVZA">�
 Итог №2.
 Рекомендую команде разработчиков исправить данные недочеты <p>
 
-<p> Контактная информация:
-Email: Melkiy206.6@yandex.ru
-Telegram: @Anton_Isaev88
-<p>
+<p> Контактная информация:</p>
+<p>Email: Melkiy206.6@yandex.ru</p>
+<p>Telegram: @Anton_Isaev88</p>
+
