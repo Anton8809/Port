@@ -73,6 +73,8 @@ Postman коллекция > <Курсовая работа 2.postman_collection
 Рекомендую команде разработчиков исправить данные недочеты <p>
 
 <p> Контактная информация:</p>
-<a href="Melkiy206.6@yandex.ru">Email</a> 
-<a href="@Anton_Isaev88">Telegram:</a>
+<p>Email</p>
+<a href="">Melkiy206.6@yandex.ru</a> 
+<p>Telegram</p>
+<a href="">@Anton_Isaev88</a>
 
