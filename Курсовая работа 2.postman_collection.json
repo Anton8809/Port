@@ -1,0 +1,738 @@
+{
+	"info": {
+		"_postman_id": "3d887dd9-6f36-41fa-be46-2358001d40cf",
+		"name": "Курсовая работа 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28875933"
+	},
+	"item": [
+		{
+			"name": "Позитивные проверки",
+			"item": [
+				{
+					"name": "Получение расписания",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": \"2023-09-15T04:00:00+03:00\",\r\n    \"till\": \"2023-09-25T04:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/events",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события в будующем",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"TESTID1\", pm.response.json().data.payload.id);\r",
+									"var key = \"TESTID1\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value);\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"Написание курсовой 2 Исаев\",\r\n    \"title\": \"курсовая тестирование Исаев\",\r\n    \"startAt\": \"2023-09-29T15:30:00+03:00\",\r\n    \"endAt\": \"2023-09-29T16:00:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/createPersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование ЛС в будующем",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"TESTID1\"\r",
+									"var value = pm.response.json().data.payload.id \r",
+									"pm.collectionVariables.set(key, value);\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"Написание курсовой 2 Isaev\",\r\n    \"title\": \"курсовая тестирование \",\r\n    \"startAt\": \"2023-09-27T19:30:00+03:00\",\r\n    \"endAt\": \"2023-09-27T20:00:00+03:00\",\r\n    \"id\": {{TESTID1}},\r\n    \"oldStartAt\":\"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/updatePersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление события в будующем",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": {{TESTID1}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/removePersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события в настоящем",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"TESTID1\", pm.response.json().data.payload.id);\r",
+									"var key = \"TESTID1\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value);\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"курсовая 2 Исаев\",\r\n    \"title\": \"курсовая №2 Исаев\",\r\n    \"startAt\": \"2023-09-26T15:30:00+03:00\",\r\n    \"endAt\": \"2023-09-26T16:00:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/createPersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование ЛС в настоящем",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"TESTID1\"\r",
+									"var value = pm.response.json().data.payload.id \r",
+									"pm.collectionVariables.set(key, value);\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"Isaev курсовой 2\",\r\n    \"title\": \"курсовая тестирование\",\r\n    \"startAt\": \"2023-09-27T15:30:00+03:00\",\r\n    \"endAt\": \"2023-09-27T16:00:00+03:00\",\r\n    \"id\": {{TESTID1}},\r\n    \"oldStartAt\":\"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/updatePersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление отредактированного ЛС в настоящем",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": {{TESTID1}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/removePersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного события в прошлом",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"TESTID1\", pm.response.json().data.payload.id);\r",
+									"var key = \"TESTID1\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value);\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"курсовая 2 Исаев\",\r\n    \"title\": \"курсовая №2 Исаев\",\r\n    \"startAt\": \"2023-09-16T15:30:00+03:00\",\r\n    \"endAt\": \"2023-09-16T16:00:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/createPersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование личного события в прошлом",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"TESTID3\"\r",
+									"var value = pm.response.json().data.payload.id \r",
+									"pm.collectionVariables.set(key, value);\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"Написание курсовой 2 Isaev\",\r\n    \"title\": \"курсовая тестирование \",\r\n    \"startAt\": \"2023-09-16T15:30:00+03:00\",\r\n    \"endAt\": \"2023-09-16T16:00:00+03:00\",\r\n    \"id\": {{TESTID1}},\r\n    \"oldStartAt\":\"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/updatePersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление личного события в прошлом",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": {{TESTID1}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/removePersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение расписания после удаления ЛС",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": \"2023-09-16T11:00:00+03:00\",\r\n    \"till\": \"2023-09-26T12:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/events",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"events"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Негативные проверки",
+			"item": [
+				{
+					"name": "Создание ЛС без названия",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"\",\r\n    \"title\": \"\",\r\n    \"startAt\": \"2023-09-27T15:30:00+03:00\",\r\n    \"endAt\": \"2023-09-27T16:00:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/createPersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание ЛС со всеми пустыми полями",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"\",\r\n    \"color\": \"\",\r\n    \"description\": \"\",\r\n    \"title\": \"\",\r\n    \"startAt\": \"2023-09-27T15:30:00+03:00\",\r\n    \"endAt\": \"2023-09-27T16:00:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/createPersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создания ЛС с некорректной датой",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"курсовая 2 Исаев\",\r\n    \"title\": \"Исаев курсовая №2\",\r\n    \"startAt\": \"2023-08-32T15:30:00+03:00\",\r\n    \"endAt\": \"2023-08-32T16:00:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/createPersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание ЛС с несуществующим цветом",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"00b3ff\",\r\n    \"description\": \"Курсовая работа №2 Исаев\",\r\n    \"title\": \"Работа курсовая Isaev\",\r\n    \"startAt\": \"2023-09-27T15:30:00+03:00\",\r\n    \"endAt\": \"2023-09-27T16:00:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/createPersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание ЛС в название которого более 40 символов",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"курсовая Исаев\",\r\n    \"title\": \"Безусловно, высокое качество позиционных исследований не оставляет шанса для приоретизации разума над эмоциями. Разнообразный и богатый опыт говорит нам, что базовый вектор развития однозначно фиксирует необходимость форм воздействия.\",\r\n    \"startAt\": \"2023-09-27T15:30:00+03:00\",\r\n    \"endAt\": \"2023-09-27T16:00:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Version}}/schedule/createPersonal",
+							"host": [
+								"{{URL}}{{Version}}"
+							],
+							"path": [
+								"schedule",
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://api-teachers.skyeng.ru\\",
+			"type": "string"
+		},
+		{
+			"key": "Version",
+			"value": "v2",
+			"type": "string"
+		},
+		{
+			"key": "Token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjpudWxsLCJuYW1lIjoidGVzdCIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6Inlkc09UODZ0MWpkaE9NS0VtR3RLMXRUZ25KUlNzR1RWIiwiYnJhbmQiOm51bGwsImV4cCI6MTY5NTgxMjI2NywiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE2OTUxNDE4NjQsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UVENfVVNBR0UiLCJST0xFX1ZJTUJPWF9URUFDSEVSX1VTQUdFIiwiUk9MRV9URUFDSEVSIiwiUk9MRV9DUk0yX1RFQUNIRVJfQUNDRVNTIiwiUk9MRV9NQVRIX1RFQUNIRVIiLCJST0xFX01BVEhfQ09OVEVOVF9USEVNRV9WSUVXIl19.Rlnv5pSzzAlQlihNtxWmgkomVGbSa7CHMjiEjg3ABdgpaDhYT9P-AWGv9H8v4m_CTJdlSNxvtb9lulsHAm3SzKGKjnjK_90WQnXm5fKr1-9AYfhItlcCHtySsQZu08goNdwOq8jlEIgZoI15GSVAqqp7eXcyxmpYMjpFZjwWK9e88FuwH0LTcul-pSRWhNt_Og7PJoapFf_f2wXmI2ZsD0N-loQo2Gv3UngQgaA9P2wu-vz0YNTUFO-j1lyaTtTF1TNx_S_5c6E76v6d1unlNnPMESacThsoHrdoUOBKY6ObDeAJnup3qB7c4Foqsc34Aa8TFxhlZSStMB_pnIFgXDdWJE8qtikQISdxJ6zlNHRtDIl1XkdTvJnHFKFirJeSxSRDdMtaMqALLsfWjqxJtUaFbJbI_YgHavdLkBBZebcO9ewGx8LwjQ0SCCBK_NCNIHcMYYN8Iy0sqgmrblNQGfzG-EY3BAPFNZXny0JPp-G7rgr6dnD6aXvuyCI4vxU6EyfkUpEovhy79Z61FsxuO1eVaBw9BdbYGDgEnJJT3Db0wer-KdGeMgSHOu-6ztyjBDh_LSc5fY37swvK9ThY0RuSI-7AopSEPY8EYXepBW53qT9ZAbd7S68qSmkUaxnCGoxwZ8gxQF6fRjFvYrn07T9aI-wD_JOhUPO_e6Gso5A",
+			"type": "string"
+		},
+		{
+			"key": "Testid",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "startAt",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "TESTID1",
+			"value": ""
+		},
+		{
+			"key": "TESTID3",
+			"value": ""
+		},
+		{
+			"key": "TESTID2",
+			"value": ""
+		},
+		{
+			"key": "startAt2",
+			"value": ""
+		}
+	]
+}
