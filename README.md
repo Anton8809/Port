@@ -28,9 +28,9 @@ Visual Studeo Code, xCode, Git, Chrom DevTools.
 и записал все отчеты и баги при их обнаружении. Сделал регрессионное тестирование и проверил старый функционал. <p>
 
 > <a href="https://bug-report-toni.atlassian.net/wiki/spaces/1/pages/1015809/1-+2-">Ссылка на проект</a>
-<p> Логин: Melkiy206.6@yandex.ru
-Пароль: frrjhldfujy2002
-<p>
+<p> Логин: Melkiy206.6@yandex.ru</p>
+<p> Пароль: frrjhldfujy2002</p>
+
 
 
 <p> Выводы: 
@@ -59,9 +59,9 @@ Visual Studeo Code, xCode, Git, Chrom DevTools.
 Postman коллекция > <Курсовая работа 2.postman_collection.json> </a>
 
 > <a href="https://bug-report-toni.atlassian.net/wiki/spaces/1/pages/1015809/1-+2-">Ссылка на проект</a>
-<p> Логин: Melkiy206.6@yandex.ru
-Пароль: frrjhldfujy2002
-<p>
+<p> Логин: Melkiy206.6@yandex.ru</p>
+<p> Пароль: frrjhldfujy2002</p>
+
 
 <p> Выводы: 
 Итог №1. После проведения проверок бэкенда проведенных с личным кабинетом в расписание "Личное событие" 
