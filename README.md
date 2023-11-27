@@ -28,10 +28,10 @@ Visual Studeo Code, xCode, Git, Chrom DevTools.
 и записал все отчеты и баги при их обнаружении. Сделал регрессионное тестирование и проверил старый функционал. <p>
 
 > <a href="https://bug-report-toni.atlassian.net/wiki/spaces/1/pages/1015809/1-+2-">Ссылка на проект</a>
-
+<p> Логин: Melkiy206.6@yandex.ru
+Пароль: frrjhldfujy2002
 <p>
-логин: Melkiy206.6@yandex.ru
-пароль:  frrjhldfujy2002 <p>
+
 
 <p> Выводы: 
 Продукт готов к выходу, хатя и имеет незначительные баги которые никак не повлияют на работоспособность данного прод
@@ -59,10 +59,9 @@ Visual Studeo Code, xCode, Git, Chrom DevTools.
 Postman коллекция > <a href="https://disk.yandex.ru/d/MLTWM02FO_FVZA">Ссылка на проект</a>
 
 > <a href="https://bug-report-toni.atlassian.net/wiki/spaces/1/pages/1015809/1-+2-">Ссылка на проект</a>
-
+<p> Логин: Melkiy206.6@yandex.ru
+Пароль: frrjhldfujy2002
 <p>
-логин: Melkiy206.6@yandex.ru
-пароль:  frrjhldfujy2002 <p>
 
 <p> Выводы: 
 Итог №1. После проведения проверок бэкенда проведенных с личным кабинетом в расписание "Личное событие" 
