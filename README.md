@@ -56,7 +56,7 @@ Visual Studeo Code, xCode, Git, Chrom DevTools.
 
 Провел API тестирование и создал Postman коллекцию <p>
 
-Postman коллекция > <Курсовая работа 2.postman_collection.json> </a>
+Postman коллекция > <a href=<Курсовая работа 2.postman_collection.json> </a>
 
 > <a href="https://bug-report-toni.atlassian.net/l/cp/1efpA8z1">Ссылка на проект</a>
 <p> Логин: Melkiy206.6@yandex.ru</p>
