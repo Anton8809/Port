@@ -54,9 +54,9 @@ Visual Studeo Code, xCode, Git, Chrom DevTools.
 
 <p> Как решал
 
-Провел API тестирование и создал Postman коллекцию <p>
+<p>Провел API тестирование и создал Postman коллекцию </p>
 
-Postman коллекция > <a href=<Курсовая работа 2.postman_collection.json> </a>
+<p>Postman коллекция > находится в закрепленном файле репозитория</p>
 
 > <a href="https://bug-report-toni.atlassian.net/l/cp/1efpA8z1">Ссылка на проект</a>
 <p> Логин: Melkiy206.6@yandex.ru</p>
